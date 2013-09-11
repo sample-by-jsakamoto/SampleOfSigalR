@@ -1,0 +1,17 @@
+*.suo
+
+obj
+bin
+
+*.user
+
+/packages/Microsoft.AspNet.SignalR.JS.1.0.0
+/packages/Microsoft.AspNet.SignalR.Owin.1.0.0
+/packages/Microsoft.AspNet.SignalR.SystemWeb.1.0.0
+/packages/Microsoft.Owin.Host.SystemWeb.1.0.0
+/packages/Microsoft.Web.Infrastructure.1.0.0.0
+/packages/Newtonsoft.Json.4.5.11
+/packages/Owin.1.0
+/packages/jQuery.1.9.1
+/packages/Microsoft.AspNet.SignalR.1.0.0
+/packages/Microsoft.AspNet.SignalR.Core.1.0.0

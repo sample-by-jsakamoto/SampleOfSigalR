@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Controller</h1>
+    <a href="#" id="link1">Change State</a>
+
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-1.0.0.min.js"></script>
+    <script>
+        $(function () {
+            var conn = $.hubConnection();
+            var hub1 = conn.createHubProxy('MyHub1');
+            conn.start();
+
+            var state = false;
+            $('#link1').click(function (e) {
+                e.preventDefault();
+                state = !state;
+                hub1.invoke('ChangeState', state);
+            });
+        });
+    </script>
+</body>
+</html>
