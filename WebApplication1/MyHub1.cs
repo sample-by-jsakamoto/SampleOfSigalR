@@ -8,9 +8,15 @@ namespace WebApplication1
 {
     public class MyHub1 : Hub
     {
-        public void ChangeState(bool newState)
+        public object ChangeState(bool newState)
         {
             this.Clients.All.StateChanged(newState);
+
+            return new
+            {
+                Foo = "Bar",
+                Now = DateTime.UtcNow
+            };
         }
     }
 }

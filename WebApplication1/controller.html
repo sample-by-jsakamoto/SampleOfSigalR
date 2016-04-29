@@ -21,7 +21,10 @@
             $('#link1').click(function (e) {
                 e.preventDefault();
                 state = !state;
-                hub1.server.changeState(state);
+                hub1.server.changeState(state)
+                    .then(function (retval) {
+                        console.log(retval);
+                    });
             });
         });
     </script>
