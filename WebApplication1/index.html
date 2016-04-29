@@ -12,16 +12,14 @@
 
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/jquery.signalR-1.0.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
     <script>
         $(function () {
-            var conn = $.hubConnection();
-            var hub1 = conn.createHubProxy('MyHub1');
-            
-            hub1.on('StateChanged', function (newState) {
+            var hub1 = $.connection.myHub1;
+            hub1.client.StateChanged = function (newState) {
                 $('#view').toggleClass('pop', newState);
-            });
-
-            conn.start();
+            };
+            $.connection.hub.start();
         });
     </script>
 </body>

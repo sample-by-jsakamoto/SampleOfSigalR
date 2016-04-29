@@ -11,17 +11,17 @@
 
     <script src="/Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/jquery.signalR-1.0.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
     <script>
         $(function () {
-            var conn = $.hubConnection();
-            var hub1 = conn.createHubProxy('MyHub1');
-            conn.start();
+            var hub1 = $.connection.myHub1;
+            $.connection.hub.start();
 
             var state = false;
             $('#link1').click(function (e) {
                 e.preventDefault();
                 state = !state;
-                hub1.invoke('ChangeState', state);
+                hub1.server.changeState(state);
             });
         });
     </script>
